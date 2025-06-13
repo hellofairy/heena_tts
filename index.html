@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>TTS 예제</title>
+</head>
+<body>
+  <h1>텍스트를 음성으로!</h1>
+  <textarea id="text" rows="5" cols="40">여기에 음성으로 읽을 내용을 적어보세요.</textarea><br>
+  <button onclick="speak()">읽기</button>
+
+  <script>
+    function speak() {
+      const text = document.getElementById("text").value;
+      const utterance = new SpeechSynthesisUtterance(text);
+
+      // 한국어 목소리 선택 (선택 사항)
+      utterance.lang = 'ko-KR';
+
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>
